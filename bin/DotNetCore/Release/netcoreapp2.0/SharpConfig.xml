@@ -341,6 +341,17 @@
             
             <exception cref="T:System.ArgumentException">When a zero-character ('\0') is set.</exception>
         </member>
+        <member name="P:SharpConfig.Configuration.OutputRawStringValues">
+            <summary>
+            Gets or sets a value indicating whether string values are written
+            without quotes, but including everything in between.
+            Example:
+            The following setting value
+                MySetting=" Example value"
+            is written to a file in the following manner
+                MySetting= Example value
+            </summary>
+        </member>
         <member name="P:SharpConfig.Configuration.IgnoreInlineComments">
             <summary>
             Gets or sets a value indicating whether inline-comments
@@ -475,6 +486,19 @@
             The type that this converter is able to convert to and from a string.
             </summary>
         </member>
+        <member name="M:SharpConfig.ITypeStringConverter.TryConvertFromString(System.String,System.Type)">
+            <summary>
+            Tries to convert a string value to an object of this converter's type.
+            </summary>
+            <param name="value"></param>
+            <param name="hint">
+                A type hint. This is used rarely, such as in the enum converter.
+                The enum converter's official type is Enum, whereas the type hint
+                represents the underlying enum type.
+                This parameter can be safely ignored for custom converters.
+            </param>
+            <returns>The converted object, or null if conversion is not possible.</returns>
+        </member>
         <member name="T:SharpConfig.TypeStringConverter`1">
             <summary>
             Represents a type-to-string and string-to-type converter
@@ -506,6 +530,19 @@
             <summary>
             The type that this converter is able to convert to and from a string.
             </summary>
+        </member>
+        <member name="M:SharpConfig.TypeStringConverter`1.TryConvertFromString(System.String,System.Type)">
+            <summary>
+            Tries to convert a string value to an object of this converter's type.
+            </summary>
+            <param name="value"></param>
+            <param name="hint">
+                A type hint. This is used rarely, such as in the enum converter.
+                The enum converter's official type is Enum, whereas the type hint
+                represents the underlying enum type.
+                This parameter can be safely ignored for custom converters.
+            </param>
+            <returns>The converted object, or null if conversion is not possible.</returns>
         </member>
         <member name="T:SharpConfig.ParserException">
             <summary>
@@ -952,6 +989,20 @@
             </typeparam>
             <returns>The values of this setting as an array.</returns>
         </member>
+        <member name="M:SharpConfig.Setting.GetValueOrDefault``1(``0,System.Boolean)">
+            <summary>
+            Gets this setting's value as a specific type, or a specified default value
+            if casting the setting to the type fails.
+            </summary>
+            <param name="defaultValue">
+            Default value if casting the setting to the specified type fails.
+            </param>
+            <param name="setDefault">
+            If true, and casting the setting to the specified type fails, <paramref name="defaultValue"/> is set
+            as this setting's new value.
+            </param>
+            <typeparam name="T">The type of the object to retrieve.</typeparam>
+        </member>
         <member name="M:SharpConfig.Setting.SetValue(System.Object)">
             <summary>
             Sets the value of this setting via an object.
@@ -970,6 +1021,19 @@
             <summary>
             Represents an error that occurs when a string value could not be converted to a specific instance.
             </summary>
+        </member>
+        <member name="M:SharpConfig.EnumStringConverter.RemoveTypeNames(System.String)">
+            <summary>
+            Removes possible type names from a string value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+            <remarks>
+            It's possible that the value is something like:
+            UriFormat.Unescaped
+            We, and especially Enum.Parse do not want this format. Instead, it wants the clean name like:
+            Unescaped
+            </remarks>
         </member>
     </members>
 </doc>
