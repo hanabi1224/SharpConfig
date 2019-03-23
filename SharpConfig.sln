@@ -7,17 +7,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{87F48902-C817-4922-96FC-296B2D48B575}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharpConfigShared", "SharpConfigShared\SharpConfigShared.shproj", "{23E5843E-254B-4EDC-84F8-B79A11230117}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharpConfig", "SharpConfig\SharpConfig.csproj", "{F1855FC6-ECEE-4B4A-BFCC-F01F1760F738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpConfigDotNetStandard", "SharpConfigDotNetStandard\SharpConfigDotNetStandard.csproj", "{47435426-6569-4208-868E-25C0519F1F0F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpConfigDotNetCore", "SharpConfigDotNetCore\SharpConfigDotNetCore.csproj", "{8C6255E9-DD5B-449C-B0CA-4CF10DD29DF0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "miscs", "miscs", "{26D14BE7-278D-4547-AB75-B48CB1400EE2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		IconLicense.txt = IconLicense.txt
+		LICENSE = LICENSE
+		README.md = README.md
+		SharpConfigLogo.png = SharpConfigLogo.png
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		SharpConfigShared\SharpConfigShared.projitems*{23e5843e-254b-4edc-84f8-b79a11230117}*SharedItemsImports = 13
-		SharpConfigShared\SharpConfigShared.projitems*{47435426-6569-4208-868e-25c0519f1f0f}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -31,14 +34,10 @@ Global
 		{87F48902-C817-4922-96FC-296B2D48B575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87F48902-C817-4922-96FC-296B2D48B575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87F48902-C817-4922-96FC-296B2D48B575}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47435426-6569-4208-868E-25C0519F1F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47435426-6569-4208-868E-25C0519F1F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47435426-6569-4208-868E-25C0519F1F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47435426-6569-4208-868E-25C0519F1F0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C6255E9-DD5B-449C-B0CA-4CF10DD29DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C6255E9-DD5B-449C-B0CA-4CF10DD29DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C6255E9-DD5B-449C-B0CA-4CF10DD29DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C6255E9-DD5B-449C-B0CA-4CF10DD29DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1855FC6-ECEE-4B4A-BFCC-F01F1760F738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1855FC6-ECEE-4B4A-BFCC-F01F1760F738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1855FC6-ECEE-4B4A-BFCC-F01F1760F738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1855FC6-ECEE-4B4A-BFCC-F01F1760F738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
